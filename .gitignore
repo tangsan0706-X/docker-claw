@@ -2,6 +2,18 @@ node_modules
 **/node_modules/
 .env
 docker-compose.extra.yml
+
+# 敏感配置文件（包含 API Key）
+config/openclaw.json
+config/*.json
+
+# 用户数据和工作空间
+workspace/
+*.log
+
+# 临时文件
+tasks/
+*.output
 dist
 pnpm-lock.yaml
 bun.lock
@@ -91,6 +103,8 @@ USER.md
 
 # Agent credentials and memory (NEVER COMMIT)
 /memory/
+# 但允许项目文档
+!/memory/MEMORY.md
 .agent/*.json
 !.agent/workflows/
 /local/
